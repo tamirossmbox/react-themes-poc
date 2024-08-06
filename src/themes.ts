@@ -1,10 +1,10 @@
-import { DefaultThemeDemo } from "styled-components";
+import { DefaultTheme } from "styled-components";
 import { darkPallete, lightPallete } from "./pallete";
 
 const dp = darkPallete;
 const lp = lightPallete;
 
-export const lightTheme: DefaultThemeDemo = {
+export const lightTheme: DefaultTheme = {
   background: lp.white,
   borderColor: lp.pewter,
   color: lp.jetBlack,
@@ -26,7 +26,7 @@ export const lightTheme: DefaultThemeDemo = {
   },
 };
 
-export const darkTheme: DefaultThemeDemo = {
+export const darkTheme: DefaultTheme = {
   background: dp.black,
   borderColor: "rgba(0,0,0,0.2)",
   color: dp.pewter,

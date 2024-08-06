@@ -1,12 +1,13 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { darkTheme, lightTheme } from "./themes";
+import { ThemeProvider } from "styled-components";
 
 const ThemeContext = createContext({
   theme: lightTheme,
   toggleTheme: () => {},
 });
 
-const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
+const ThemeProviderDemo = ({ children }: { children: React.ReactNode }) => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   const toggleTheme = () => {
@@ -17,11 +18,11 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <ThemeContext.Provider value={{ theme: currentTheme, toggleTheme }}>
-      {children}
+      <ThemeProvider theme={currentTheme}>{children}</ThemeProvider>
     </ThemeContext.Provider>
   );
 };
 
 export const useTheme = () => useContext(ThemeContext);
 
-export { ThemeProvider, ThemeContext };
+export { ThemeProviderDemo, ThemeContext };

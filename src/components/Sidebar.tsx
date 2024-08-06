@@ -1,17 +1,17 @@
-import React from 'react'
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const SidebarContainer = styled.div`
+  ${({ theme }) => `
     display: flex;
     grid-area: sidebar;
-    background: magenta;
-`
+    color: ${theme.sidebar.color};
+    background: ${theme?.sidebar.background};
+    `}
+`;
 
+const Sidebar = ({ children }: React.PropsWithChildren) => {
+  return <SidebarContainer>{children}</SidebarContainer>;
+};
 
-const Sidebar = ({ children}: React.PropsWithChildren) => {
-  return (
-    <SidebarContainer>{children}</SidebarContainer>
-  )
-}
-
-export default Sidebar
+export default Sidebar;
