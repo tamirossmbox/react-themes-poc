@@ -1,8 +1,7 @@
 import { DefaultThemeDemo } from "styled-components";
-import { bluePallete, darkPallete, lightPallete } from "./pallete";
+import { darkPallete, lightPallete } from "./pallete";
 
 const dp = darkPallete;
-const bp = bluePallete;
 const lp = lightPallete;
 
 export const lightTheme: DefaultThemeDemo = {
